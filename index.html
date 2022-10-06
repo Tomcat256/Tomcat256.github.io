@@ -1,0 +1,51 @@
+<html>
+	<style type="text/css">
+		.content
+		{
+			font-size: 256;
+			 display: flex;
+  			justify-content: center;
+  			align-items: center;
+
+			width: 100%;
+			height: 80%;
+		}
+	</style>
+	<script type="text/javascript">
+		function generate(numDigits)
+		{
+			result = ""
+
+			for (i = 0; i < numDigits; i++)
+			{
+				digit = String(Math.floor(Math.random()*10))
+				result += digit + " "
+			}
+
+			return result
+		}
+
+		function showRandomValue(ElementId, numDigits)
+		{
+			value = generate(numDigits)
+			node = document.getElementById(ElementId)
+
+			if (node != null)
+			{
+				node.innerHTML = value
+			}
+		}
+	</script>
+
+	<title>Large numbers generator</title>
+	<body>
+		<div class="content" id="content">
+			0 0 0 0 0
+		</div>
+
+		<button type="button" onclick="showRandomValue('content', 5)" autofocus = "1">Generate</button>
+
+	</body>
+
+
+</html>
